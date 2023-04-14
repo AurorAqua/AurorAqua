@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AurorAqua - Save Water Today</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+		body {
+			background-color: #0077be; /* blue intensity */
+			background-image: url("785.jpg");
+			background-size: cover;
+			overflow: hidden;
+		}
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 80vh;
+			color: white;
+			font-size: 24px;
+			font-weight: bold;
+			text-align: center;
+			font-size: 22px;
+			margin-bottom:20px;
+		}
+		.question {
+			border-radius: 24px;
+			background-color: black;
+			margin-bottom: 10px;
+    		padding: 14px;
+		}
+		.choices {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			margin-top: 10px;
+		}
+		.choice {
+			padding: 5px;
+			margin: 5px;
+			border: 2px solid white;
+			border-radius: 10px;
+			cursor: pointer;
+			transition: all 0.2s ease-in-out;
+		}
+
+		.logo-container {
+			position: absolute;
+			top: -40px;
+			left: 0;
+			padding: 0 px;
+		}
+
+		.logo-container img {
+			width: 200px;
+			height: auto;
+		}
+
+		
+
+		a {
+			position: absolute;
+			bottom: 30px;
+			background: white;
+			border-radius: 10px;
+			border: none;
+			color: black;
+			padding: 5px 10px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 20px;
+			font-family: ui-sans-serif;
+		}
+
+		.support{
+			position: absolute;
+			bottom: 30px;
+			right: 40px;
+			background: white;
+			border-radius: 10px;
+			border: none;
+			color: black;
+			padding: 5px 10px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 20px;
+			font-family: ui-sans-serif;
+		}
+
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		.choice:hover {
+			background-color: white;
+			color: #0077be;
+		}
+		.points {
+			margin-top: 20px;
+		}
+
+		#loginButton {
+			position: absolute;
+			top: 0;
+			right: 0;
+			border-radius: 20px;
+			margin: 20px;
+			}
+		
+		
+		#userWallet {
+			display: none;
+		}	
+		
+
+		@media (max-width: 600px) {
+			.choices {
+				flex-direction: column;
+			}
+			
+			.question{
+				margin: 15px;
+			}
+
+			.choice {
+				margin: 5px auto;
+			}
+			
+			.container {
+				justify-content: flex-start;
+			}
+
+			.question {
+				font-size: 18px;
+				padding: 6px;
+			}
+		}
+
+		@media only screen and (max-width: 600px) {
+
+			.container {
+				align-items: center;
+				justify-content: center;
+			}
+		}
+
+		button{
+			background: linear-gradient(to bottom, #FFFFFF, orange);
+			border-radius: 20px;
+			border: none;
+			color: black;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 24px;
+		}
+		
+	</style>
+	<link rel="stylesheet" type="text/css" href="buttons.css">
+</head>
+<body >
+	<div class="logo-container">
+		<img src="AurorAqua-logos_black.png" alt="Logo">
+	</div>
+	  
+	<button class="enableBTTButton btn" style="font-family: ui-sans-serif;">Connect Wallet</button>
+	<a href="suggestions.html" style="left:40px;">How to Reduce?</a>
+	<a href="support.html" style="right:40px;">Your Supports</a>
+	<div class="container">
+		<div class="question">
+			<p style="text-align: right;">1/10</p>
+			<p>How many times do you take shower per week?</p>
+			<div class="choices">
+				<div class="choice" onclick="selectChoice(15)">1-3</div>
+				<div class="choice" onclick="selectChoice(30)">4-6</div>
+				<div class="choice" onclick="selectChoice(45)">7+</div>
+			</div>
+		</div>
+		<div class="question" style="display:none">
+			<p style="text-align: right;">2/10</p>
+			<p>What is your average shower time?</p>
+			<div class="choices">
+				<div class="choice" onclick="selectChoice(20)">1-5 mins</div>
+				<div class="choice" onclick="selectChoice(40)">5-20 mins</div>
+				<div class="choice" onclick="selectChoice(75)">Over 20 mins</div>
+			</div>
+		</div>
+    <div class="question" style="display:none">
+			<p style="text-align: right;">3/10</p>
+			<p>How long do you keep the taps open at home?</p>
+			<div class="choices">
+				<div class="choice" onclick="selectChoice(40)">1-15 mins</div>
+				<div class="choice" onclick="selectChoice(85)">15-45 mins</div>
+				<div class="choice" onclick="selectChoice(150)">Over 45 mins</div>
+			</div>
+		</div>
+    <div class="question" style="display:none">
+			<p style="text-align: right;">4/10</p>
+			<p>How do you wash your laundry?</p>
+			<div class="choices">
+				<div class="choice" onclick="selectChoice(35)">Washing Machine</div>
+				<div class="choice" onclick="selectChoice(10)">by Hand</div>
+			</div>
+		</div>
+    <div class="question" style="display:none">
+			<p style="text-align: right;">5/10</p>
+			<p>How do you wash your dishes?</p>
+			<div class="choices">
+				<div class="choice" onclick="selectChoice(15)">Dishwasher</div>
+				<div class="choice" onclick="selectChoice(27)">by Hand</div>
+			</div>
+		</div>
+    <div class="question" style="display:none">
+			<p style="text-align: right;">6/10</p>
+			<p>How many cups of coffee do you drink per week?</p>
+			<div class="choices">
+				<div class="choice" onclick="selectChoice(21)">1-3</div>
+				<div class="choice" onclick="selectChoice(27)">4-6</div>
+				<div class="choice" onclick="selectChoice(52)">7+</div>
+			</div>
+		</div>
+    <div class="question" style="display:none">
+			<p style="text-align: right;">7/10</p>
+			<p>How often do you shop?</p>
+			<div class="choices">
+				<div class="choice" onclick="selectChoice(291)">Rarely</div>
+				<div class="choice" onclick="selectChoice(583)">Sometimes</div>
+				<div class="choice" onclick="selectChoice(1166)">Until my energy is gone</div>
+			</div>
+		</div>
+    <div class="question" style="display:none">
+			<p style="text-align: right;">8/10</p>
+			<p>How many times do you wash your car a year?</p>
+			<div class="choices">
+				<div class="choice" onclick="selectChoice(1)">1-2</div>
+				<div class="choice" onclick="selectChoice(2)">3-5</div>
+				<div class="choice" onclick="selectChoice(5)">6-15</div>
+			</div>
+		</div>
+		<div class="question" style="display:none">
+			<p style="text-align: right;">9/10</p>
+			<p>Do you recycle paper, plastic, bottles and cans?</p>
+			<div class="choices">
+				<div class="choice" onclick="selectChoice(-50)">Always</div>
+				<div class="choice" onclick="selectChoice(-25)">Sometimes</div>
+				<div class="choice" onclick="selectChoice(16)">Never</div>
+			</div>
+		</div>
+		<div class="question" style="display:none">
+			<p style="text-align: right;">10/10</p>
+			<p>Whats's your diet?</p>
+			<div class="choices">
+				<div class="choice" onclick="selectChoice(1283)">Where's my meat!!</div>
+				<div class="choice" onclick="selectChoice(563)">Vegetarian</div>
+				<div class="choice" onclick="selectChoice(406)">Vegan</div>
+			</div>
+		</div>
+		
+		<div class="points">Your Water Footprint: <br><span id="points">0</span><span> Gallons / Day</span></div>
+		
+	</div>
+	<div class="abc" style="font-family: ui-sans-serif; position:flex; margin-top: 6rem; ">
+		<label for="bttAmountInput">BTT Amount:</label>
+		<input type="number" id="bttAmountInput" name="bttAmount" >
+		<button class="sendBTTButton btn">Support</button>
+	</div>
+	
+	<script>
+		var points = 0;
+		var currentQuestion = 0;
+		
+		function selectChoice(choicePoints) {
+			points += choicePoints;
+			document.getElementById("points").innerHTML = points;
+			currentQuestion++;
+			nextQuestion();
+		}
+		
+		function nextQuestion() {
+			var questionDivs = document.getElementsByClassName("question");
+			for (var i = 0; i < questionDivs.length; i++) {
+				questionDivs[i].style.display = "none";
+			}
+			if (currentQuestion == questionDivs.length) {
+				showResult();
+			} else {
+				var nextQuestionDiv = document.getElementsByClassName("question")[currentQuestion];
+				nextQuestionDiv.style.display = "block";
+			}
+
+
+		}
+		
+		function showResult() {
+			var containerDiv = document.getElementsByClassName("container")[0];
+			containerDiv.innerHTML = "<p>Your water footprint is around " + points + " gallons/day.</p><br>The average water footprint for an individual in the US is 1,802 gallons/day.";
+			
+			var abcDiv = document.getElementsByClassName("abc")[0];
+			abcDiv.classList.add("show-abc");
+		}
+		
+		function showResult() {
+			var surveyResultPoints = points * 1000; // Convert points to BBT (assuming 1 point = 100 BBT)
+			var containerDiv = document.getElementsByClassName("container")[0];
+			containerDiv.innerHTML = "<p>Your water footprint is around " + points + " gallons/day.</p><br>The average water footprint for an individual in the US is 1,802 gallons/day.";
+
+			var abcDiv = document.getElementsByClassName("abc")[0];
+			abcDiv.classList.add("show-abc");
+
+			var bttAmountInput = document.getElementById("bttAmountInput");
+			bttAmountInput.value = surveyResultPoints;
+		}
+	</script>
+	<script src="metamask.js"></script>
+	<script src="support.js"></script>
+</body>
+</html>
+
+  

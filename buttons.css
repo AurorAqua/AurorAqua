@@ -1,0 +1,90 @@
+.abc {
+    display: none;
+    position: relative;
+    bottom: 16rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.show-abc {
+    display: block;
+}
+
+
+.enableBTTButton {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: linear-gradient(to bottom, #FFFFFF, orange);
+    border-radius: 20px;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+} 
+
+.abc label {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.abc input {
+  width: 50%;
+  max-width: 300px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #f2f2f2;
+}
+
+.abc button {
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.result {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.result span {
+  font-weight: bold;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.buttons {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sendBTTButton {
+  margin-top: 1rem;
+  font-size: 10px;
+}
+
+  
